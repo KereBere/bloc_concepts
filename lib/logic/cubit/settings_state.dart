@@ -21,4 +21,8 @@ class SettingsState extends Equatable {
 
   @override
   List<Object> get props => [emailNotifications, appNotifications];
+
+  @override
+  String toString() =>
+      'SettingsState(appNotifications: $appNotifications, emailNotifications: $emailNotifications)';
 }

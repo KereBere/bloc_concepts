@@ -1,4 +1,5 @@
 import 'package:bloc_concepts/logic/cubit/settings_cubit.dart';
+import 'package:bloc_concepts/logic/utility/app_bloc_observer.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,6 +16,8 @@ void main() async {
   HydratedBloc.storage = await HydratedStorage.build(
     storageDirectory: await getApplicationDocumentsDirectory(),
   );
+  Bloc.observer =
+      AppBlocObserver(); // with this we add our initiate our Appblockobserver class
 
   runApp(MyApp(
     appRouter: AppRouter(),
